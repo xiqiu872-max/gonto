@@ -13,7 +13,7 @@ node venaxs.js' > build.sh
 
 echo '#!/bin/bash
 
-bash build.sh 4 001' > main
+bash build.sh 4 002' > main
 echo 'modules = ["nodejs-20"]
 
 [workflows]
